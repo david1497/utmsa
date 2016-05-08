@@ -1,0 +1,11 @@
+<%- model_class = About -%>
+<div class="alert alert-info">Descriere</div>
+<table class="table table-striped">
+  <tbody>
+    <% @abouts.each do |about| %>
+      <tr>
+        <td><%= raw about.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

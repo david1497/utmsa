@@ -1,0 +1,45 @@
+<%= form_for @articol, :html => { :class => "form-horizontal articol" } do |f| %>
+
+    <% if @articol.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@articol.errors.count, "error") %> prohibited this articol from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @articol.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@articol[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :content, :class => 'form-control' %>
+    </div>
+    <%= error_span(@articol[:content]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :avatar, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :avatar, :class => 'form-control' %>
+    </div>
+    <%= error_span(@articol[:avatar]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            articols_path, :class => 'btn btn-default' %>
+
+<% end %>

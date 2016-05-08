@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SAUTM</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="btn-group btn-group-justified" role="group">
+		<div class="btn-group">
+			<%= link_to "Principala", abouts_path, class: "btn btn-info"  %>
+		</div>
+		<div class="btn-group">
+        <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bibliotecă <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <%= link_to "Legislație", legislations_path, class: "btn btn-primary a_demo_two menue" %> 
+          <%= link_to "Info Utile", utilites_path, class: "btn btn-primary a_demo_two menue" %>
+          <%= link_to "Literatură", literatures_path, class: "btn btn-primary a_demo_two menue" %>
+        </ul>
+      </div>
+		<div class="btn-group">
+			<%= link_to "Galerie", articols_path, class: "btn btn-info" %>
+		</div>
+		<div class="btn-group">
+			<%= link_to "Contacte", contactes_path, class: "btn btn-info" %>
+		</div>
+
+    
+    <div class="btn-group">
+      <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <% @categoris.each do |item| %>
+          <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"><% item.name %></span>
+          </button> 
+      </button> 
+      
+      <% item.subcategoris.each do |subitem| %>
+      <ul class="dropdown-menu">
+        <%= link_to subitem.name, subcategori_path(subitem.id), class: "btn btn-primary" %>
+      </ul>
+      <% end %>
+    <% end %>
+    </div>
+	</div>
+<%= yield %>
+
+</body>
+</html>
