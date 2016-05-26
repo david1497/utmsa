@@ -1,5 +1,6 @@
 class ArticolsController < ApplicationController
   before_action :set_articol, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /articols
   # GET /articols.json

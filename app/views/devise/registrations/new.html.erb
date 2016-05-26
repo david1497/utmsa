@@ -1,29 +1,58 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="panel panel-default devise-bs col-sm-6 col-md-6 col-xs-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-xs-offset-3 col-lg-offset-3">
+  <div class="panel-heading">
+    <h4><%= t('.sign_up', :default => "Inregistrare") %></h4>
   </div>
+  <div class="panel-body">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Nume %><br />
+        <%= f.text_field :nume, class: "form-control" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+      <div class="form-group">
+        <%= f.label :Prenume %><br />
+        <%= f.text_field :prenume, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Data_nasterii %><br />
+        <%= f.datetime_field :birth, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Telefon %><br />
+        <%= f.text_field :tel, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :IDNO %><br />
+        <%= f.text_field :idnp, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :SeriaBI %><br />
+        <%= f.text_field :seria, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Adresa %><br />
+        <%= f.text_field :adresa, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <%= f.submit t('.sign_up', default: "Inregistrare"), class: "btn btn-primary" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
+</div>
 <%= render "devise/shared/links" %>

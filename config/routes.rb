@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :comments
   resources :utilites
   resources :literatures
   resources :legislations
   resources :articols
-  resources :subcategoris
   resources :categoris
   resources :contactes
   resources :abouts

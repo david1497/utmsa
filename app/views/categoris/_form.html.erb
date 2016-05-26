@@ -22,6 +22,13 @@
     </div>
     <%= error_span(@categori[:name]) %>
   </div>
+  <div class="control-group">
+    <%= f.label :Content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.cktext_area :content, :class => 'form-control' %>
+    </div>
+    <%= error_span(@categori[:name]) %>
+  </div>
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

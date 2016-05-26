@@ -48,8 +48,7 @@ RailsAdmin.config do |config|
         end
       end
     end
-
-    config.model Subcategori do
+    config.model Categori do
       edit do
         field :name, :text do
           label 'name'

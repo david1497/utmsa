@@ -5,47 +5,72 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="btn-group btn-group-justified" role="group">
-		<div class="btn-group">
-			<%= link_to "Principala", abouts_path, class: "btn btn-info"  %>
-		</div>
-		<div class="btn-group">
-        <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Bibliotecă <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <%= link_to "Legislație", legislations_path, class: "btn btn-primary a_demo_two menue" %> 
-          <%= link_to "Info Utile", utilites_path, class: "btn btn-primary a_demo_two menue" %>
-          <%= link_to "Literatură", literatures_path, class: "btn btn-primary a_demo_two menue" %>
-        </ul>
-      </div>
-		<div class="btn-group">
-			<%= link_to "Galerie", articols_path, class: "btn btn-info" %>
-		</div>
-		<div class="btn-group">
-			<%= link_to "Contacte", contactes_path, class: "btn btn-info" %>
-		</div>
-
-    <p></p>
-    <div class="btn-group">
-      <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <%= image_tag "logos.gif", class: "logos image-responsive" %>
+  <%= image_tag "https://images.cooltext.com/4690233.png", alt: "Scoala Auto UTM", class: "logotxt" %>
+  <% if user_signed_in? %>
+    <%= current_user.email %>
+    <%= link_to "Iesire", destroy_user_session_path, method: "delete" %>
+  <% else %>
+    <%= link_to "Logare", new_user_session_path %>
+  <% end %>
+  <div class="button-wrapper">
+      <%= link_to "Principala", abouts_path, class: "a-btn btn btn-info"  %>
+    <div class="menu btn-group">
+      <button type="button" class="men a-btn btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bibliotecă 
         <span class="caret"></span>
-        <% @categoris.each do |item| %>
-          <button type="button" class="a_demo_two menue btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"><% item.name %></span>
-          </button> 
-      </button> 
-      
-      <% item.subcategoris.each do |subitem| %>
+      </button>
       <ul class="dropdown-menu">
-        <%= link_to subitem.name, subcategori_path(subitem.id), class: "btn btn-primary" %>
+      <%= link_to "Legislație", legislations_path, class: "a-btn" %> 
+      <%= link_to "Informatii Utile", utilites_path, class: "a-btn" %>
+      <%= link_to "Literatură", literatures_path, class: "a-btn" %>
       </ul>
-      <% end %>
-    <% end %>
     </div>
-	</div>
+      <%= link_to "Galerie", articols_path, class: "a-btn btn btn-info" %>
+      <%= link_to "Contacte", contactes_path, class: "a-btn btn btn-info" %>
+      <%= link_to "Înscriere", comments_path, class: "a-btn btn btn-info" %>
+  </div>
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag "1.jpg", class: "image-responsive" %>
+    </div>
+    <div class="item">
+      <%= image_tag "2.jpg", class: "image-responsive" %>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  <div class="left col-sm-2 col-md-2 col-xs-2 col-lg-2">
+  
+  </div>
+  <div class="right col-sm-2 col-md-2 col-xs-2 col-lg-2 col-sm-offset-8 col-md-offset-8 col-xs-offset-8 col-lg-offset-8">
+    <%= @categoris.each do |cat| %>
+      <%= button_to "#{cat.name}", categoris_path(cat.id), class: "btn btn-default" %>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>
