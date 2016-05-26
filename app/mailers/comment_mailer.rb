@@ -9,6 +9,8 @@ class CommentMailer < ApplicationMailer
     @comment = comment
     #@categori = @categori.item
     mail to: "david.junior1412@gmail.com",
-        subject: "O noua inregistrare" 
+        subject: "O noua inregistrare"     
   end
+
+
 end

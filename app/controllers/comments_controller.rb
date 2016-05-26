@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /comments
   # GET /comments.json
@@ -25,8 +26,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
+    @comment.save!
 
-    CommentMailer.new_comment(comment).delivery_now
+    CommentMailer.new_comment(@comment).deliver_now
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }

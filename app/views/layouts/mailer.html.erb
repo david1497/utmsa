@@ -1,6 +1,15 @@
 <html>
   <body>
     <%= yield %>
+    <%= @comment.user.nume %>
+	<%= @comment.user.prenume %>
+	<%= @comment.user.birth %>
+	<%= @comment.user.adresa %>
+	<%= @comment.user.tel %>
+	<%= @comment.user.seria %>
+	<%= @comment.user.idnp %>
+	<%= @comment.user.email %>
+	<%= @comment.content %>
     Thanks!
   </body>
 </html>
