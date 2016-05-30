@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :anounces
+  resources :grupes
+  resources :banners
   devise_for :users
+  resources :users
   resources :comments
   resources :utilites
   resources :literatures
   resources :legislations
   resources :articols
-  resources :categoris
   resources :contactes
   resources :abouts
+  resources :users
   mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.

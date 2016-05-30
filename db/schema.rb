@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526211107) do
+ActiveRecord::Schema.define(version: 20160529183333) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "anounces", force: :cascade do |t|
+    t.string   "titlu"
+    t.string   "content"
+    t.integer  "grupe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +31,21 @@ ActiveRecord::Schema.define(version: 20160526211107) do
     t.text     "name"
     t.text     "content"
     t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "image"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "adres"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +87,12 @@ ActiveRecord::Schema.define(version: 20160526211107) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "grupes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "legislations", force: :cascade do |t|
     t.text     "titlu"
     t.string   "avatar"
@@ -76,33 +105,11 @@ ActiveRecord::Schema.define(version: 20160526211107) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "nume"
-    t.string   "prenume"
-    t.datetime "birth"
-    t.integer  "idnp"
-    t.string   "seria"
-    t.text     "adresa"
     t.string   "avatar"
-    t.string   "tel"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "utilites", force: :cascade do |t|
     t.text     "title"

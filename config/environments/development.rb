@@ -44,6 +44,7 @@ Rails.application.configure do
     domain: "example.com",
     authetication: "plain",
     enable_starttls_auto: true,
+    ssl: true,
     user_name: ENV["david.junior1214@gmail.com"],
     password: ENV["c0r0na1214v1008c"]
      }

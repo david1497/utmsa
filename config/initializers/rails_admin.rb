@@ -48,9 +48,9 @@ RailsAdmin.config do |config|
         end
       end
     end
-    config.model Categori do
+    config.model Category do
       edit do
-        field :name, :text do
+        field :name, :string do
           label 'name'
         end
         field :content, :ck_editor, :text do

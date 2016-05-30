@@ -2,20 +2,14 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:avatar) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articols.each do |articol| %>
-      <tr>
-        <td><%= link_to articol.name, articol_path(articol) %></td>
-        <td><%= articol.content %></td>
-        <td><%= articol.avatar %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+  <% @articols.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |articol| %>
+        <div class="col-xs-4">
+          <h4><%= articol.avatar %></h4>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
