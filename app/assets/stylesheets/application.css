@@ -21,10 +21,6 @@
 	width: 100%;
 }
 
-.dropdown-menu {
-	top: 60%;
-}
-
 .btn-group-justified > .btn-group .btn {
 	box-shadow: 5px 5px 10px 5px;
 }
@@ -98,10 +94,140 @@
     width: 100%;
 }
 .panel {
-    margin-top: -27.5%;
+    margin-top: -30.5%;
+    margin-left: 0
 }
 
 .initial {
     border: 1px solid gray;
     border-radius: 7px;
+}
+.fot {
+    text-align: center;
+    color: gray;
+    height:50px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+.logo{
+    background-color: #ffffff;
+}
+.logo p {
+    text-align: center;
+    color: #000000;
+}
+.men {
+    margin-top: -55px
+}
+.over {
+  z-index: 10;    
+  position: fixed;
+  top: 5px;
+  width: 30%;
+  right: 20px;
+  height: 10%;
+  background: rgba(255,255,255,0.15);
+  z-index: 1;
+}
+.map{
+    overflow:hidden;
+    height:280px;
+    width:100%;
+}
+#gmap_canvas{
+    height:280px;
+    width:100%;
+}
+.cats {
+    background-image: url('blue.jpg');
+}
+.right form {
+    border: 2px solid #000000;
+    border-radius: 6px;
+}
+.left img {
+        border-radius: 5px;
+}
+.left {
+    color: black;
+    margin-top: 1%;
+}
+.right {
+    margin-top: 1%;
+}
+
+.modal {
+    color: black;
+}
+
+.modal-body {
+    font-size: 18px
+}
+.modal-dialog {
+    width: 60%
+    background-color: white;
+}
+.user {
+    background-color: white;
+}
+
+.row .col-xs-4 button h4 img {
+    height: 116px;
+    width: 100%;
+}
+.page{
+    width: 40%;
+}
+.row .images img{
+    height: 125px;
+    margin-left: 5%;
+}
+a.hideDisplay{
+    position: relative;
+    z-index: 20;
+    color: #000;
+    text-decoration: none;
+}
+
+a.hideDisplay:hover{
+    z-index: 30;
+}
+a.hideDisplay span.showDisplayOnHover{
+    display: none;
+}
+a.hideDisplay:hover span.showDisplayOnHover{
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    line-height: 25px;
+
+}
+span.showBodyOfDisplayOnHover {
+    font-size: 16px;
+    font-weight: normal;
+    color: #444;
+    line-height: 18px;
+}
+.row .hideDisplay .showDisplayOnHover .showBodyOfDisplayOnHover .imgprev img{
+    width: 780px;
+    height: 500px;
+}
+
+#menu .button-wrapper {
+    display: inline-flex;
+}
+#menu .button-wrapper .btn-group .btn-group .dropup .dropdown-menu .drop{
+        line-height: 1px;
+        font-size: 17px
+}
+.title{
+        font-size: 30px;
+    text-align: center;
+}
+.dl-horizontal dd{
+    margin-left: 70px
+}
+.dl-horizontal {
+    color: #000000;
 }

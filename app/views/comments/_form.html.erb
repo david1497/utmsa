@@ -21,6 +21,18 @@
       <%= f.cktext_area :content, :class => 'form-control' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+  </div>
+  <%# @categories.each do |category| %>
+    <div class="field">
+      <%# f.label "#{category.name}" %> <br />
+      <%# f.check_box :send_text, {}, true, false %> <br />
+    </div>
+  <%# end %>
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

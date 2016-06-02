@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :grupe
-  has_one :comment
+  has_many :comments
   mount_uploader :avatar, AvatarUploader
+  def owner_of?(post)
+  	(self.id == post.user_id ) ? true : false 
+  end
          
 end

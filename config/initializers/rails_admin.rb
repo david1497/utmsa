@@ -53,7 +53,20 @@ RailsAdmin.config do |config|
         field :name, :string do
           label 'name'
         end
+        field :pret, :integer do
+          label 'pret'
+        end
         field :content, :ck_editor, :text do
+          label 'content'
+        end
+      end
+    end
+    config.model Grupe do
+      edit do
+        field :name, :string do
+          label 'name'
+        end
+        field :orar, :ck_editor, :text do
           label 'content'
         end
       end

@@ -1,19 +1,13 @@
 <%- model_class = Utilite -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+<div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+<div class="title alert alert-info">Informatii utile</div>
 <table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:avatar) %></th>
-  </thead>
   <tbody>
     <% @utilites.each do |utilite| %>
       <tr>
-        <td><%= link_to utilite.title, utilite_path(utilite) %></td>
-        <td><%= utilite.avatar %></td>
+        <td><%= link_to utilite.titlu, utilite.avatar.url(utilite) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

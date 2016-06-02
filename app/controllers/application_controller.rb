@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :avatar
-    devise_parameter_sanitizer.for(:sign_up).push(:name, :lastname, :email, :password, :birth, :tel, :seria, :idnp, :adresa )
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :lastname, :email, :password, :birth, :tel, :seria, :idnp, :adresa, :grupe )
   end
   
   private
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
   	@categories = Category.all
     @banners = Banner.all
     @users = User.all
+    @grupes = Grupe.all
+    @anounces = Anounce.all
+    @comments = Comment.all
+    @articols = Articol.all
   end
 
 end

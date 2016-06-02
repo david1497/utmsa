@@ -1,15 +1,21 @@
-<%- model_class = Articol -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<div class="center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+<div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+<div class="title alert alert-info">Galerie foto</div>
+<div class="images">
   <% @articols.in_groups_of(3) do |group| %>
     <div class="row">
       <% group.compact.each do |articol| %>
-        <div class="col-xs-4">
-          <h4><%= articol.avatar %></h4>
-        </div>
+        <a class="hideDisplay">
+          <%= image_tag articol.avatar.profileuser, class: "img-thumbnail" %>
+          <span class="showDisplayOnHover">
+            <span class="showBodyOfDisplayOnHover">
+              <div class="imgprev">
+                <%= image_tag articol.avatar %>
+              </div>
+            </span>          
+          </span>
+        </a>
       <% end %>
     </div>
   <% end %>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 <%- model_class = Contacte -%>
 <div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+<div class="title alert alert-info">Date de contact</div>
   <table class="table table-striped">
     <tbody>
       <% @contactes.each do |contacte| %>
@@ -10,4 +11,31 @@
       <% end %>
     </tbody>
   </table>
+  <div class="map">
+    <div id='gmap_canvas'>
+    </div>
+    <div>
+      <small>
+        <a href="http://embedgooglemaps.com">embed google maps</a>
+      </small>
+    </div>
+    <div>
+      <small>
+        <a href="https://termsandcondiitionssample.com">terms and conditions sample</a>
+      </small>
+    </div>
+    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+  </div>
+  <script type='text/javascript'>
+  function init_map(){
+    var myOptions = {
+      zoom:14,center:new 
+      google.maps.LatLng(47.05766579103314,28.869791812164312),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+    marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(47.0620985,28.8689309)});
+    infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>Universitatea Tehnică a Moldovei, Strada Studenților, Chișinău, Moldova<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);
+      });infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+  </script>
 </div>

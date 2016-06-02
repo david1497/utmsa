@@ -2,18 +2,15 @@
 <div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
 <table class="table table-striped">
   <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-      <% if current_user.owner_of?(comment)%>
-        <%= raw comment.content %>
-      <% elsif current_user.comment.nil?
-         %>
-        <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_comment_path,
-            :class => 'btn btn-primary' %>
-      <% end %>
-      </tr>
+    <% if current_user %>
+      <div class="title alert alert-success">Înscrieri</div>
+      <div class="alert alert-info">
+        <% current_user.comments.each if current_user do |comment| %>
+          <%= raw current_user.comment.content %>
+        <% end %>
+      </div>
     <% end %>
+    <%= link_to t('Înscriere nouă', :default => t("helpers.links.new")), new_comment_path, :class => 'btn btn-primary' %>
   </tbody>
 </table>
 </div>
