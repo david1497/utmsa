@@ -94,8 +94,7 @@
     width: 100%;
 }
 .panel {
-    margin-top: -30.5%;
-    margin-left: 0
+    margin-top: -37.5%;
 }
 
 .initial {
@@ -112,6 +111,8 @@
 }
 .logo{
     background-color: #ffffff;
+    z-index: 1;
+
 }
 .logo p {
     text-align: center;
