@@ -14,6 +14,7 @@
   <script
     src='https://maps.googleapis.com/maps/api/js?v=3.exp'>
   </script>
+  <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
 </head>
 <body>
 	<div id="wrapper">
@@ -87,20 +88,22 @@
                     <span>Grupa: <%= current_user.grupe.name if current_user.grupe %></span>
                   <% end %>
                 </div>
-                <div class="ucontent">
+                <div class="ucontent col-sm-7 col-md-7 col-xs-7 col-lg-7">
                   <% if current_user %>
                     <span>Cursul</span>
                     <div class="alert alert-info">
-                      <% current_user.comments.each if current_user do |comment| %>
+                    <% if current_user.comments %>
+                      <% current_user.comments.each do |comment| %>
                         <%= raw comment.content %>
                       <% end %>
+                    <% end %>
                     </div>
                     <span>Anunturi</span><br>
                     <div class="alert alert-success">
                       <% if current_user.grupe %>
                         <% current_user.grupe.anounces.each do |anounce| %>
                           <%= anounce.titlu %><br>
-                          <%= anounce.content %>
+                          <%= anounce.content %><hr>
                         <% end %>
                       <% end %>
                     </div><br>

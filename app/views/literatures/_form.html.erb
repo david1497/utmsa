@@ -23,11 +23,11 @@
     <%= error_span(@literature[:titlu]) %>
   </div>
   <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
+    <%= f.label :avatar, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :content, :class => 'form-control' %>
+      <%= f.file_field :avatar, :class => 'form-control' %>
     </div>
-    <%= error_span(@literature[:content]) %>
+    <%= error_span(@literature[:avatar]) %>
   </div>
 
 
