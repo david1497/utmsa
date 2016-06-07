@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_admin', '~> 0.8.1'
 gem 'ckeditor', '~> 4.1', '>= 4.1.6'
 gem 'carrierwave', '~> 0.11.0'
-gem "therubyracer"
+#gem "therubyracer" instaleaza nodejs pentru assets
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'devise', '~> 4.0', '>= 4.0.1'
@@ -46,6 +46,7 @@ gem 'unicorn'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm', group: :development
+gem 'capistrano-bundler', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,6 +60,7 @@ end
 
 group :production do
   gem 'thin'
+  gem 'sqlite3', '~> 1.3'
   #gem 'pg', '~> 0.18.4'
   #gem 'rails_12factor'
 end
