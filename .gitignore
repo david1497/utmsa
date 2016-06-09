@@ -20,6 +20,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
+config/
 .DS_Store
 public/uploads
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
