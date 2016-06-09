@@ -1,3 +1,4 @@
+<%= tinymce %>
 <%= form_for @about, :html => { :class => "form-horizontal about" } do |f| %>
 
     <% if @about.errors.any? %>
@@ -18,9 +19,8 @@
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :content, :class => 'form-control' %>
+      <%= f.text_area :content, :class => 'tinymce form-control' %>
     </div>
-    <%= error_span(@about[:content]) %>
   </div>
 
 

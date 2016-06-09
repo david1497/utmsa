@@ -1,5 +1,4 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   ## == Devise ==
@@ -43,34 +42,34 @@ RailsAdmin.config do |config|
 
     config.model About do
       edit do
-        field :content, :ck_editor, :text do
+        field :content, :text do
           label 'content'
         end
       end
     end
-    config.model Category do
-      edit do
-        field :name, :string do
-          label 'name'
-        end
-        field :pret, :integer do
-          label 'pret'
-        end
-        field :content, :ck_editor, :text do
-          label 'content'
-        end
-      end
-    end
-    config.model Grupe do
-      edit do
-        field :name, :string do
-          label 'name'
-        end
-        field :orar, :ck_editor, :text do
-          label 'content'
-        end
-      end
-    end
-
+#    config.model Category do
+#      edit do
+#        field :name, :string do
+#          label 'name'
+#        end
+#        field :pret, :integer do
+#          label 'pret'
+#        end
+#        field :content, :ck_editor, :text do
+#          label 'content'
+#        end
+#      end
+#    end
+#    config.model Grupe do
+#      edit do
+#        field :name, :string do
+#          label 'name'
+#        end
+#        field :orar, :_editor, :text do
+#          label 'content'
+#        end
+#      end
+#    end
+#
   end
 end

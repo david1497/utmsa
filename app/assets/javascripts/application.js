@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require ckeditor/init
+//= require tinymce-jquery
 //= require_tree .
