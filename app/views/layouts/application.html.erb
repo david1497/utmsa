@@ -155,7 +155,7 @@
     			<div class="row col-sm-12 col-md-12 col-lg-12 col-xs-12">
       			<div class="left col-sm-2 col-md-2 col-xs-2 col-lg-2">
         			<% @banners.each do |ban| %>
-            		  <%= link_to image_tag(ban.image.profile), ban.adres, class: "col-sm-12 col-md-12 col-xs-12 col-lg-12" %>
+            		  <%= link_to image_tag(ban.image.profile), ban.adres, class: "image-responsive col-sm-12 col-md-12 col-xs-12 col-lg-12" %>
             		  <%= ban.content %></br><hr>
         			<% end %>
       			</div>
