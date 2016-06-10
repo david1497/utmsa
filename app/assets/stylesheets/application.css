@@ -96,6 +96,7 @@
 .panel {
     margin-top: -37%;
     margin-left: 0%;
+    color: black;
 }
 
 .initial {
@@ -143,6 +144,7 @@
 }
 .cats {
     background-image: url('blue.jpg');
+        background-color: rgba(7, 113, 98, 0.48);
 }
 .right form {
     border: 2px solid #000000;
