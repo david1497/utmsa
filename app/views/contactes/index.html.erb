@@ -5,8 +5,8 @@
     <tbody>
       <% @contactes.each do |contacte| %>
         <tr>
-          <td><%= contacte.title %></td>
-          <td><%= contacte.content %></td>
+          <td><%=raw contacte.title %></td>
+          <td><%=raw contacte.content %></td>
         </tr>
       <% end %>
     </tbody>
