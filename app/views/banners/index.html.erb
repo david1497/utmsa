@@ -6,7 +6,7 @@
   <tbody>
     <% @banners.each do |banner| %>
       <tr>
-        <td><%= link_to banner.image, raw banner.adres %></td>
+        <td><%raw link_to banner.image, raw banner.adres %></td>
         <td><%= banner.content %></td>
       </tr>
     <% end %>
