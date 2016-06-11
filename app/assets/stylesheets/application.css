@@ -94,7 +94,6 @@
     width: 100%;
 }
 .panel {
-    margin-top: -35%;
     margin-left: 0%;
     color: black;
 }
@@ -152,12 +151,10 @@
 }
 .left {
     color: black;
-    margin-top: 1%;
 }
 .right {
-    margin-top: 1%;
+    position: absolute;
 }
-
 .modal {
     color: black;
 }
