@@ -5,7 +5,7 @@
   <tbody>
     <% @legislations.each do |legislation| %>
       <tr>
-        <td><%= link_to legislation.titlu, legislation.avatar.url(legislation) %></td>
+        <td><%= link_to raw(legislation.titlu), legislation.avatar.url(legislation) %></td>
       </tr>
     <% end %>
   </tbody>
