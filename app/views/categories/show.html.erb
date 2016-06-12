@@ -1,5 +1,6 @@
 <%- model_class = Category -%>
 <div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
+<div class="title alert alert-info"><%= @category.name %></div>
 <dl class="dl-horizontal">
   <dd><%= raw @category.content %></dd>
   <dd>Preţ : <%= @category.pret  %></dd>
