@@ -1,44 +1,20 @@
+<div class="panel center col-sm-8 col-md-8 col-xs-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-lg-offset-2">
 <%- model_class = Sigurance -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <div class="sigur">
+    <h4 class="alert alert-success">Cursul de perfecţionare “Instructor auto”</h4><br> 
+    In volum de 76 ore este destinat pentru perfecţionarea profesională a instructorilor auto din sistemul de instruire a conducătorilor de autovehicule.
+    În rezultatul absolvirii cursurilor cursanţii vor obţine următoarele competenţe:
+    Însuşirea abilităţilor de utilizare a tehnicilor psihopedagogice în practică la pregătirea conducătorilor auto, cunoştinţelor teoretice şi deprinderilor practice la analiza construcţiei, aprecierea proprietăţilor tehnice şi de exploatare a autovehiculului.
+    Cunoaşterea caracteristicilor psihice a personalităţii, funcţiile pedagogiei, principiile şi metodele didactice, principiile de organizare a circulaţiei rutiere.
+    Cursurile se vor finaliza cu susţinerea testului de absolvire şi eliberarea certificatului Centrului Universitar de Formare Continuă al Universităţii Tehnice a Moldovei.
+    <hr>
+    <h4 class="alert alert-success">Cursul de perfecţionare “Profesor de legislaţie rutieră”</h4><br> 
+    In volum de 144 ore este destinat pentru perfecţionarea profesională a cadrelor didactice din sistemul de instruire a conducătorilor de autovehicule.
+    În rezultatul absolvirii cursurilor cursanţii vor obţine următoarele competenţe:
+    Însuşirea abilităţilor de utilizare a tehnicilor psihopedagogice în practică la pregătirea conducătorilor auto, cunoştinţelor teoretice şi deprinderilor practice la analiza construcţiei, aprecierea proprietăţilor tehnice şi de exploatare a autovehiculului, cunoştinţelor teoretice şi deprinderilor practice la analiza regulamentului circulaţiei rutiere, bazelor comportamentului în conducerea autovehicolului şi siguranţa traficului rutier.
+    Cunoaşterea caracteristicilor psihice a personalităţii, funcţiile pedagogiei, principiile şi metodele didactice, principiile de organizare a circulaţiei rutiere, criteriilor pentru aprecierea competenţei profesionale a conducătorilor auto.
+    Cursurile se vor finaliza cu susţinerea testului de absolvire şi eliberarea certificatului Centrului Universitar de Formare Continuă al Universităţii Tehnice a Moldovei.
+    <hr>
+    <%= link_to t('Înscrietete'), new_sigurance_path, :class => 'btn btn-primary' %>
+  </div>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nume) %></th>
-      <th><%= model_class.human_attribute_name(:prenume) %></th>
-      <th><%= model_class.human_attribute_name(:tel) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:content) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sigurances.each do |sigurance| %>
-      <tr>
-        <td><%= link_to sigurance.id, sigurance_path(sigurance) %></td>
-        <td><%= sigurance.nume %></td>
-        <td><%= sigurance.prenume %></td>
-        <td><%= sigurance.tel %></td>
-        <td><%= sigurance.email %></td>
-        <td><%= sigurance.content %></td>
-        <td><%=l sigurance.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_sigurance_path(sigurance), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      sigurance_path(sigurance),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_sigurance_path,
-            :class => 'btn btn-primary' %>

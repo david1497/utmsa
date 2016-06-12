@@ -223,10 +223,14 @@ span.showBodyOfDisplayOnHover {
 .title{
         font-size: 30px;
     text-align: center;
+    font-family: A;
 }
 .dl-horizontal dd{
     margin-left: 70px
 }
 .dl-horizontal {
     color: #000000;
+}   
+.sigur {
+    font-family: Arial;
 }

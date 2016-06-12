@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     @anounces = Anounce.all
     @comments = Comment.all
     @articols = Articol.all
+    @sigurances = Sigurance.all
   end
 
 end

@@ -1,6 +1,14 @@
 <h1>Cerere</h1>
-
 <p>
-  A fost depusa o noua cerere de inregistrare
+  A fost depusa o noua cerere de înregistrare
 </p>
-	
+<% if @current_user %>
+	<span>Nume: <%= @current_user.name %></span><br>
+  <span>Prenume: <%= @current_user.lastname %></span><br>
+  <span>E-mail: <%= @current_user.email %></span><br>
+  <span>Telefon: <%= @current_user.tel %></span><br>
+  <span>Data nasterii: <%=l @current_user.birth %> </span><br>
+  <span>Adresa: <%= @current_user.adresa %></span><br>
+  <span>Seria BI: <%= @current_user.seria %></span><br>
+  <span>IDNO: <%= @current_user.idnp %></span><br>
+<% end %>

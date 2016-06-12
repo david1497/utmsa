@@ -26,6 +26,8 @@ class SigurancesController < ApplicationController
   def create
     @sigurance = Sigurance.new(sigurance_params)
 
+    SiguranceMailer.new_sigurance(@sigurance).deliver_now
+
     respond_to do |format|
       if @sigurance.save
         format.html { redirect_to @sigurance, notice: 'Sigurance was successfully created.' }
