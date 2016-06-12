@@ -25,6 +25,7 @@ class SigurancesController < ApplicationController
   # POST /sigurances.json
   def create
     @sigurance = Sigurance.new(sigurance_params)
+    @sigurance.save!
 
     SiguranceMailer.new_sigurance(@sigurance).deliver_now
 
