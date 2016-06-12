@@ -1,0 +1,2 @@
+module SigurancesHelper
+end

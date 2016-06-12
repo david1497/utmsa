@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sigurances
   resources :categories
   resources :anounces
   resources :grupes

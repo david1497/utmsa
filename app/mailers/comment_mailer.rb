@@ -8,7 +8,7 @@ class CommentMailer < ApplicationMailer
   def new_comment(comment)
     @comment = comment
     #@categori = @categori.item
-    mail to: "david.junior1412@gmail.com",
+    mail to: "scoalaautoutm@gmail.com",
         subject: "O noua inregistrare"     
   end
 
