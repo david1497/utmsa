@@ -11,6 +11,4 @@ class CommentMailer < ApplicationMailer
     mail to: "scoalaautoutm@gmail.com",
         subject: "O noua inregistrare"     
   end
-
-
 end
