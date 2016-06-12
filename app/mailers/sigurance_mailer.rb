@@ -8,7 +8,7 @@ class SiguranceMailer < ApplicationMailer
   def new_sigurance(sigurance)
 	@sigurance = sigurance
     #@categori = @categori.item
-    mail to: "faraaccidente@gmail.com",
+    mail to: "david.junior1412@gmail.com",
         subject: "O noua inregistrare" 
   end
 end
