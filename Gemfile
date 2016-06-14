@@ -37,6 +37,7 @@ gem 'devise-bootstrap-views'
 gem 'rails-html-sanitizer'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'tinymce-rails', '~> 4.3', '>= 4.3.12'
+gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
